@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: ${APP_NAME}
+    ports:
+      - "8000:80" # Access via http://localhost:8000
+    volumes:
+      - ./:/var/www/html
+    environment:
+      - PUID=${UID:-1000}
+      - PGID=${GID:-1000}
+      - APP_ENV=local
+    restart: unless-stopped

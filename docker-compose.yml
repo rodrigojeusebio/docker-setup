@@ -3,9 +3,10 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile
-    container_name: ${APP_NAME}
+    container_name: my_laravel_app
     ports:
-      - "8000:80" # Access via http://localhost:8000
+      - "8000:80"    # Nginx Web Traffic
+      # - "5173:5173"  # Vite / NPM Hot Reloading
     volumes:
       - ./:/var/www/html
     environment:

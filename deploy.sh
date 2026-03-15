@@ -6,8 +6,6 @@ set -e
 echo "🚀 Starting Deployment for my_laravel_app..."
 
 # 1. Export your server's User and Group IDs so the container uses them
-export UID=$(id -u)
-export GID=$(id -g)
 CONTAINER_NAME="my_laravel_app"
 
 # 2. Start or update the container
